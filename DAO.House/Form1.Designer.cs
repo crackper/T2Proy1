@@ -35,7 +35,6 @@
             this.Codigo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Descripcion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Categoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.productoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.productoDTOBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -57,10 +56,12 @@
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.productoDTOBindingSource)).BeginInit();
+            this.productoDTOBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productoDTOBindingNavigator)).BeginInit();
             this.productoDTOBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoDTODataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoDTOBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // listView1
@@ -100,10 +101,6 @@
             // 
             this.Categoria.Text = "Categoria";
             this.Categoria.Width = 127;
-            // 
-            // productoDTOBindingSource
-            // 
-            this.productoDTOBindingSource.DataSource = typeof(DAO.House.ProductoDTO);
             // 
             // productoDTOBindingNavigator
             // 
@@ -289,22 +286,37 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "Descontinuado";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
+            // productoDTOBindingSource
+            // 
+            this.productoDTOBindingSource.DataSource = typeof(DAO.House.ProductoDTO);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(720, 124);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 3;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(925, 536);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.productoDTODataGridView);
             this.Controls.Add(this.productoDTOBindingNavigator);
             this.Controls.Add(this.listView1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.productoDTOBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.productoDTOBindingNavigator)).EndInit();
             this.productoDTOBindingNavigator.ResumeLayout(false);
             this.productoDTOBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.productoDTODataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoDTOBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -339,6 +351,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

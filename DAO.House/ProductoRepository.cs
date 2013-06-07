@@ -56,7 +56,11 @@ namespace DAO.House
 
         public Producto GetFromProductoById(Int32 id)
         {
-            throw new NotImplementedException();
+            var command = CreateCommand("GetFromProductoById");
+
+            AddInPrameter(command, "@id", id);
+
+            return GetListEntity(command).SingleOrDefault();
         }
     }
 }

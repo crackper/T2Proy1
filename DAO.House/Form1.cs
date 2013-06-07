@@ -39,5 +39,14 @@ namespace DAO.House
             //MessageBox.Show(listView1.SelectedItems[0].Index.ToString());
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var producto = productoDTOBindingSource.Current as ProductoDTO;
+
+            var frmprod = new Form2();
+            frmprod.EditProducto(producto.Id);
+            frmprod.ShowDialog();
+        }
+
     }
 }
