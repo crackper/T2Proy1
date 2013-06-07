@@ -7,46 +7,56 @@ using System.Data.SqlClient;
 
 namespace DAO.House
 {
-    public class ProductoRepository
+    public class ProductoRepository: ObjectFactory<ProductoDTO,Producto>
     {
         public List<ProductoDTO> GetAllFromProducto()
         {
-            var lista = new List<ProductoDTO>();
+            var command = CreateCommand("GetAllFromProducto");
 
-            var cnx = new SqlConnection();
-            cnx.ConnectionString = "Data Source=(local);Initial Catalog=DBSystem;Integrated Security=True";
+            return GetListDTO(command);
 
-            cnx.Open();
+            //var cnx = new SqlConnection();
+            //cnx.ConnectionString = "Data Source=(local);Initial Catalog=DBSystem;Integrated Security=True";
 
-            using (cnx)
-            {
-                var command = cnx.CreateCommand();
-                command.CommandText = "GetAllFromProducto";
-                command.CommandType = CommandType.StoredProcedure;
+            //cnx.Open();
 
-                using (var reader = command.ExecuteReader())
-                {
-                    ////
-                    if (reader.HasRows)
-                    {
-                        AutoMapper.Mapper.CreateMap<IDataReader, ProductoDTO>();
-                        lista = AutoMapper.Mapper.Map<IDataReader, List<ProductoDTO>>(reader);
-                    }
-                    //while (reader.Read())
-                    //{
-                    //    var producto = new Producto()
-                    //    {
-                    //        Id=reader.GetInt32(reader.GetOrdinal("Id")),
-                    //        CategoriaId = reader.GetInt32(reader.GetOrdinal("CategoriaId"))
-                    //    };                        
+            //using (cnx)
+            //{
+            //    var command = cnx.CreateCommand();
+            //    command.CommandText = "GetAllFromProducto";
+            //    command.CommandType = CommandType.StoredProcedure;
 
-                    //    lista.Add(producto);
-                    //}
-                }
 
-            }
+            //    lista = base.GetListDTO(command);
 
-            return lista;
+            //    //using (var reader = command.ExecuteReader())
+            //    //{
+            //    //    ////
+            //    //    if (reader.HasRows)
+            //    //    {
+            //    //        AutoMapper.Mapper.CreateMap<IDataReader, ProductoDTO>();
+            //    //        lista = AutoMapper.Mapper.Map<IDataReader, List<ProductoDTO>>(reader);
+            //    //    }
+            //    //    //while (reader.Read())
+            //    //    //{
+            //    //    //    var producto = new Producto()
+            //    //    //    {
+            //    //    //        Id=reader.GetInt32(reader.GetOrdinal("Id")),
+            //    //    //        CategoriaId = reader.GetInt32(reader.GetOrdinal("CategoriaId"))
+            //    //    //    };                        
+
+            //    //    //    lista.Add(producto);
+            //    //    //}
+            //    //}
+
+            //}
+
+            
+        }
+
+        public Producto GetFromProductoById(Int32 id)
+        {
+            throw new NotImplementedException();
         }
     }
 }

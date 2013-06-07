@@ -22,20 +22,21 @@ namespace DAO.House
 
             var lista = productoRepository.GetAllFromProducto();
 
-            foreach (var item in lista)
-            {
-                ListViewItem lvitem = new ListViewItem(item.Id.ToString(),0);
-                lvitem.SubItems.Add(item.Codigo.ToString());
-                lvitem.SubItems.Add(item.Descripcion);
-                lvitem.SubItems.Add(item.Categoria);
+            productoDTOBindingSource.DataSource = lista;
+            //foreach (var item in lista)
+            //{
+            //    ListViewItem lvitem = new ListViewItem(item.Id.ToString(),0);
+            //    lvitem.SubItems.Add(item.Codigo.ToString());
+            //    lvitem.SubItems.Add(item.Descripcion);
+            //    lvitem.SubItems.Add(item.Categoria);
 
-                listView1.Items.Add(lvitem);
-            }
+            //    listView1.Items.Add(lvitem);
+            //}
         }
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            MessageBox.Show(listView1.SelectedItems[0].Index.ToString());
+            //MessageBox.Show(listView1.SelectedItems[0].Index.ToString());
         }
 
     }
