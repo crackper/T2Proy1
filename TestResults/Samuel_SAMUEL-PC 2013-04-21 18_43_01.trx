@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="b58c11a6-6709-44d7-87bb-cc51a021189e" name="Samuel@SAMUEL-PC 2013-04-21 18:43:01" runUser="Samuel-PC\Samuel" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Local" id="1f294c37-af87-48bd-bb70-7fb5cebd3076">
+    <Description>Esta es la configuración de pruebas predeterminada para una ejecución de pruebas local.</Description>
+    <Deployment enabled="false" runDeploymentRoot="Samuel_SAMUEL-PC 2013-04-21 18_43_01">
+      <DeploymentItem filename="D:\Documents\Visual Studio 2010\Projects\2013-1\DAO.House\DAO.House\bin\Debug\DAO.House.exe" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2013-04-21T18:43:01.6635873-05:00" queuing="2013-04-21T18:43:04.8787712-05:00" start="2013-04-21T18:43:05.0037784-05:00" finish="2013-04-21T18:43:06.2538499-05:00" />
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" passed="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="GetAllFromProductoTest" storage="d:\documents\visual studio 2010\projects\2013-1\dao.house\testproject\bin\debug\testproject.dll" id="81be2098-a2bb-fd52-62f0-98fe35e61381">
+      <Execution id="c796cda1-828a-4c94-8a84-f33bad5e038f" />
+      <TestMethod codeBase="D:/Documents/Visual Studio 2010/Projects/2013-1/DAO.House/TestProject/bin/Debug/TestProject.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="TestProject.ProductoRepositoryTest, TestProject, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="GetAllFromProductoTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Resultados que no están en la lista" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="Todos los resultados cargados" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="81be2098-a2bb-fd52-62f0-98fe35e61381" executionId="c796cda1-828a-4c94-8a84-f33bad5e038f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="c796cda1-828a-4c94-8a84-f33bad5e038f" testId="81be2098-a2bb-fd52-62f0-98fe35e61381" testName="GetAllFromProductoTest" computerName="SAMUEL-PC" duration="00:00:00.3701530" startTime="2013-04-21T18:43:05.1417863-05:00" endTime="2013-04-21T18:43:06.1678450-05:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c796cda1-828a-4c94-8a84-f33bad5e038f">
+      <Output>
+        <ErrorInfo>
+          <Message>El método de prueba TestProject.ProductoRepositoryTest.GetAllFromProductoTest produjo la excepción: 
+System.InvalidOperationException: No se ha inicializado la propiedad ConnectionString.</Message>
+          <StackTrace>    en System.Data.SqlClient.SqlConnection.PermissionDemand()
+   en System.Data.SqlClient.SqlConnectionFactory.PermissionDemand(DbConnection outerConnection)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en DAO.House.ProductoRepository.GetAllFromProducto() en D:\Documents\Visual Studio 2010\Projects\2013-1\DAO.House\DAO.House\ProductoRepository.cs:línea 19
+   en TestProject.ProductoRepositoryTest.GetAllFromProductoTest() en D:\Documents\Visual Studio 2010\Projects\2013-1\DAO.House\TestProject\ProductoRepositoryTest.cs:línea 77
+</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+</TestRun>
