@@ -26,7 +26,7 @@ namespace DAO.House
 
                 using (var reader = command.ExecuteReader())
                 {
-
+                    ////
                     if (reader.HasRows)
                     {
                         AutoMapper.Mapper.CreateMap<IDataReader, ProductoDTO>();
