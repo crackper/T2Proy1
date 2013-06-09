@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections.ObjectModel;
 
 namespace DAO.House
 {
@@ -22,7 +23,12 @@ namespace DAO.House
 
             var lista = productoRepository.GetAllFromProducto();
 
-            productoDTOBindingSource.DataSource = lista;
+            ObservableCollection<ProductoDTO> listaO = new ObservableCollection<ProductoDTO>(lista);
+
+            productoDTOBindingSource.DataSource = listaO;
+
+
+            productoDTOBindingSource.ResetBindings(true);
             //foreach (var item in lista)
             //{
             //    ListViewItem lvitem = new ListViewItem(item.Id.ToString(),0);

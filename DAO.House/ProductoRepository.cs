@@ -60,7 +60,7 @@ namespace DAO.House
 
             AddInPrameter(command, "@id", id);
 
-            return GetListEntity(command).SingleOrDefault();
+            return GetEntity(command);
         }
     }
 }

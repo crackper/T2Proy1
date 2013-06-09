@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Collections.ObjectModel;
 
 namespace DAO.House
 {
@@ -25,7 +26,22 @@ namespace DAO.House
         {
             var productoRepository = new ProductoRepository();
 
+           // var lista2 = productoRepository.GetFromProductoById(id) as IEnumerable<ProductoDTO>;
+            
+            //ObservableCollection<ProductoDTO> lista = new ObservableCollection<ProductoDTO>(lista2);
             productoBindingSource.DataSource = productoRepository.GetFromProductoById(id);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var producto = productoBindingSource.Current as Producto;
+
+            string message = "";
+
+            if (!producto.Validate(out message))
+            {
+                MessageBox.Show(message);
+            }
         }
     }
 }

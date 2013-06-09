@@ -7,7 +7,9 @@ using System.Data.SqlClient;
 
 namespace DAO.House
 {
-    public class ObjectFactory<DTO,Entity>:MasterDataAccess
+    public class ObjectFactory<DTO,Entity> :MasterDataAccess
+        where DTO:class 
+        where Entity :class
     {
         protected List<DTO> GetListDTO(SqlCommand command) 
         {
@@ -25,6 +27,20 @@ namespace DAO.House
             return lista;
         }
 
+        protected DTO GetDTO(SqlCommand command)
+        {
+            DTO dto = null;
+
+            var lista = GetListDTO(command);
+
+            if (lista.Count > 0)
+            {
+                dto = lista.FirstOrDefault();
+            }
+
+            return dto;
+        }
+
         protected List<Entity> GetListEntity(SqlCommand command)
         {
             var lista = new List<Entity>();
@@ -39,6 +55,20 @@ namespace DAO.House
             }
 
             return lista;
+        }
+
+        protected Entity GetEntity(SqlCommand command)
+        {
+            Entity entity = null;
+
+            var lista = GetListEntity(command);
+
+            if (lista.Count > 0)
+            {
+                entity = lista.FirstOrDefault();
+            }
+
+            return entity;
         }
     }
 }
